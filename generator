@@ -1,0 +1,24 @@
+import string
+
+def generate_special_bytes(length):
+    count = 0
+    while count < length:
+        for upper in string.ascii_uppercase:
+            for lower in string.ascii_lowercase:
+                for num in range(10):
+                    yield upper + lower + str(num)
+                    count += 1
+                    if count >= length:
+                        return
+
+length = int(input("Input length of chars: ")) #0 - 50000
+if length:
+    gen = generate_special_bytes(length)
+    result = ''.join([next(gen) for _ in range(length)])
+    result = result[:length]
+    print("\nResult:", result)
+    print("\nLength:", len(result))
+else:
+    print("Invalid length entered.")
+
+# result : Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8...
