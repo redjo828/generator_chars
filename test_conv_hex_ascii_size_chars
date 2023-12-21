@@ -1,0 +1,35 @@
+def hex_to_ascii(hex_string):
+    return bytes.fromhex(hex_string).decode('utf-8')
+
+def count_characters_until_limit(string, limit):
+    return len(string[:limit])
+
+def count_chars_before_word(word, text):
+    count = 0
+    for char in text:
+        if char == word[0]:
+            if text[count : count + len(word)] == word:
+                break
+        count += 1
+    return count
+
+target_string = "Ac0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8..."
+
+limit = 117  # Укажите максимальное количество символов
+
+def main():
+    hex_input = input("Enter a hexadecimal string: ")
+    ascii_text = hex_to_ascii(hex_input)
+    count = count_chars_before_word(ascii_text, target_string)  # Исправленный порядок параметров
+    #result = count_characters_until_limit(target_string, limit)
+
+    print("\n     HEX :  " + hex_input)
+    print("   ASCII : ", ascii_text, count,'bite')
+
+    #print(f"Количество символов до {limit} символов в 'target_string': {result}")  # Уточнено описание результата
+
+# Ab2A
+# 41623241
+
+if __name__ == "__main__":
+    main()
