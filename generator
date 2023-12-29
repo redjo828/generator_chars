@@ -47,12 +47,15 @@ def main():
     print("\n     HEX :  " + hex_re)
     print("   ASCII : ", rev_hex_input, count, '[bite]')
 
+    input("Press Enter to exit...")
+    #input("\nНажмите Enter для выхода...")
 
 if __name__ == "__main__":
     main()
 
 # result : Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8...
-#Enter a hexadecimal string: 33704132
+
+#Enter a hexadecimal string: 33704132 
 
     # HEX :  32417033
- #  ASCII :  2Ap3 458 [bite]
+ #  ASCII :  2Ap3 458 [bite] 
